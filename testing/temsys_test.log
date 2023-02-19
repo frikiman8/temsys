@@ -1,0 +1,362 @@
+2022/08/20 23:01:06 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:01:06 - root - INFO - ### Start
+2022/08/20 23:01:06 - root - DEBUG - ### Abriendo basedatos -> /kkdb/sensoresTHV.db
+2022/08/20 23:03:39 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:03:39 - root - INFO - ### Start
+2022/08/20 23:03:39 - root - DEBUG - ### Abriendo basedatos -> /kkdb/sensoresTHV.db
+2022/08/20 23:07:29 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:07:29 - root - INFO - ### Start
+2022/08/20 23:07:29 - root - DEBUG - ### Abriendo basedatos -> /kk/db/sensoresTHV.db
+2022/08/20 23:09:06 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:09:06 - root - INFO - ### Start
+2022/08/20 23:09:06 - root - DEBUG - ### Abriendo basedatos -> /usr/local/MisScripts/temsys/kk/db/sensoresTHV.db
+2022/08/20 23:09:06 - root - INFO - --- 20/08/2022 23:09:06 ---
+2022/08/20 23:09:06 - root - INFO -    Check sensors...
+2022/08/20 23:09:06 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:09:06 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensors HTTP/1.1" 200 620
+2022/08/20 23:09:06 - root - INFO -    Sensores...
+2022/08/20 23:09:06 - root - INFO - habitacion
+2022/08/20 23:09:06 - root - INFO - Matrimonio
+2022/08/20 23:09:06 - root - INFO - salon
+2022/08/20 23:09:06 - root - INFO - Javier
+2022/08/20 23:09:06 - root - INFO -    Check token...
+2022/08/20 23:09:06 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:09:06 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "POST /api/user/login HTTP/1.1" 200 300
+2022/08/20 23:09:06 - root - INFO - New token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjEwNDc3NDYsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.RyvLuZ-YlpW0oSz50_RpmeIGmfx3lIszRd0jQPrO250
+Expiracion: 2022-08-21T02:09:06.295893014Z
+Coookies: {}
+2022/08/20 23:09:06 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:09:06 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:25:25 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:25:25 - root - INFO - ### Start
+2022/08/20 23:25:25 - root - DEBUG - ### Abriendo basedatos -> /usr/local/MisScripts/temsys/kk/db/sensoresTHV.db
+2022/08/20 23:25:25 - root - INFO - --- 20/08/2022 23:25:25 ---
+2022/08/20 23:25:25 - root - INFO -    Check sensors...
+2022/08/20 23:25:25 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:25 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensors HTTP/1.1" 200 620
+2022/08/20 23:25:25 - root - INFO -    Sensores...
+2022/08/20 23:25:25 - root - INFO - habitacion
+2022/08/20 23:25:25 - root - INFO - Matrimonio
+2022/08/20 23:25:25 - root - INFO - salon
+2022/08/20 23:25:25 - root - INFO - Javier
+2022/08/20 23:25:25 - root - INFO -    Check token...
+2022/08/20 23:25:25 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "POST /api/user/login HTTP/1.1" 200 300
+2022/08/20 23:25:26 - root - INFO - New token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjEwNDg3MjYsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.BLn7UeqlckVS39pj8zWuYZzzMns5AmrKhhxd1PXbbHw
+Expiracion: 2022-08-21T02:25:26.015496014Z
+Coookies: {}
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:25:26 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.4 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:25:26 - root - INFO - Sensor: habitacion tipo: humidity valor: 38.6 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:25:26 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.4 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:25:26 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 40.8 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 172
+2022/08/20 23:25:26 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:25:26 - root - INFO - Sensor: salon tipo: humidity valor: 39.8 -> topic publicado: casa/salon/humidity
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:26 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:25:26 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:25:26 - root - INFO - Sensor: Javier tipo: humidity valor: 39 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:25:53 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:25:53 - root - INFO - ### Start
+2022/08/20 23:25:53 - root - DEBUG - ### Abriendo basedatos -> /usr/local/MisScripts/temsys/kk/db/sensoresTHV.db
+2022/08/20 23:25:53 - root - INFO - --- 20/08/2022 23:25:53 ---
+2022/08/20 23:25:53 - root - INFO -    Check sensors...
+2022/08/20 23:25:53 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensors HTTP/1.1" 200 620
+2022/08/20 23:25:54 - root - INFO -    Sensores...
+2022/08/20 23:25:54 - root - INFO - habitacion
+2022/08/20 23:25:54 - root - INFO - Matrimonio
+2022/08/20 23:25:54 - root - INFO - salon
+2022/08/20 23:25:54 - root - INFO - Javier
+2022/08/20 23:25:54 - root - INFO -    Check token...
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "POST /api/user/login HTTP/1.1" 200 300
+2022/08/20 23:25:54 - root - INFO - New token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjEwNDg3NTQsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.0GCulKvKVdPYisuA4NOhI4NL0Uz9HHd29rc-ogedOfk
+Expiracion: 2022-08-21T02:25:54.122239234Z
+Coookies: {}
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:25:54 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:25:54 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.4 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:25:54 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.4 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:25:54 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39.7 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:54 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 170
+2022/08/20 23:25:54 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:25:54 - root - INFO - Sensor: salon tipo: humidity valor: 39 -> topic publicado: casa/salon/humidity
+2022/08/20 23:25:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:25:55 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:25:55 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:25:55 - root - INFO - Sensor: Javier tipo: humidity valor: 36 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:26:55 - root - INFO - --- 20/08/2022 23:26:55 ---
+2022/08/20 23:26:55 - root - INFO -    Check sensors...
+2022/08/20 23:26:55 - root - INFO -    Sensores...
+2022/08/20 23:26:55 - root - INFO - habitacion
+2022/08/20 23:26:55 - root - INFO - Matrimonio
+2022/08/20 23:26:55 - root - INFO - salon
+2022/08/20 23:26:55 - root - INFO - Javier
+2022/08/20 23:26:55 - root - INFO -    Check token...
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:26:55 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:26:55 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.5 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:26:55 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39.5 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:26:55 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 172
+2022/08/20 23:26:55 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:26:55 - root - INFO - Sensor: salon tipo: humidity valor: 37.7 -> topic publicado: casa/salon/humidity
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:26:55 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:26:55 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:26:55 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:27:55 - root - INFO - --- 20/08/2022 23:27:55 ---
+2022/08/20 23:27:55 - root - INFO -    Check sensors...
+2022/08/20 23:27:55 - root - INFO -    Sensores...
+2022/08/20 23:27:55 - root - INFO - habitacion
+2022/08/20 23:27:55 - root - INFO - Matrimonio
+2022/08/20 23:27:55 - root - INFO - salon
+2022/08/20 23:27:55 - root - INFO - Javier
+2022/08/20 23:27:55 - root - INFO -    Check token...
+2022/08/20 23:27:55 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:27:56 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:27:56 - root - INFO - Sensor: habitacion tipo: humidity valor: 30.8 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:27:56 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:27:56 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39.5 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 172
+2022/08/20 23:27:56 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:27:56 - root - INFO - Sensor: salon tipo: humidity valor: 37.5 -> topic publicado: casa/salon/humidity
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:27:56 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:27:56 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:27:56 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:28:56 - root - INFO - --- 20/08/2022 23:28:56 ---
+2022/08/20 23:28:56 - root - INFO -    Check sensors...
+2022/08/20 23:28:56 - root - INFO -    Sensores...
+2022/08/20 23:28:56 - root - INFO - habitacion
+2022/08/20 23:28:56 - root - INFO - Matrimonio
+2022/08/20 23:28:56 - root - INFO - salon
+2022/08/20 23:28:56 - root - INFO - Javier
+2022/08/20 23:28:56 - root - INFO -    Check token...
+2022/08/20 23:28:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:28:56 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:28:56 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:28:56 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.2 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:28:56 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:28:57 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:28:57 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:28:57 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39.5 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:28:57 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:28:57 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 172
+2022/08/20 23:28:57 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:28:57 - root - INFO - Sensor: salon tipo: humidity valor: 36.8 -> topic publicado: casa/salon/humidity
+2022/08/20 23:28:57 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:28:57 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:28:57 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:28:57 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:30:18 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:30:18 - root - INFO - ### Start
+2022/08/20 23:30:18 - root - DEBUG - ### Abriendo basedatos -> /usr/local/MisScripts/temsys/kk/db/sensoresTHV.db
+2022/08/20 23:30:18 - root - INFO - --- 20/08/2022 23:30:18 ---
+2022/08/20 23:30:18 - root - INFO -    Check sensors...
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensors HTTP/1.1" 200 620
+2022/08/20 23:30:18 - root - INFO -    Sensores...
+2022/08/20 23:30:18 - root - INFO - habitacion
+2022/08/20 23:30:18 - root - INFO - Matrimonio
+2022/08/20 23:30:18 - root - INFO - salon
+2022/08/20 23:30:18 - root - INFO - Javier
+2022/08/20 23:30:18 - root - INFO -    Check token...
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "POST /api/user/login HTTP/1.1" 200 300
+2022/08/20 23:30:18 - root - INFO - New token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjEwNDkwMTgsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.hkXYyhtutdnOgPd93mYR54tEPDt4pzNEXYhMUlkCKy8
+Expiracion: 2022-08-21T02:30:18.450789082Z
+Coookies: {}
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:30:18 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:30:18 - root - INFO - Sensor: habitacion tipo: humidity valor: 30.7 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:30:18 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:30:18 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39.2 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 172
+2022/08/20 23:30:18 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:30:18 - root - INFO - Sensor: salon tipo: humidity valor: 36.8 -> topic publicado: casa/salon/humidity
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:30:18 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:30:18 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:30:18 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:31:18 - root - INFO - --- 20/08/2022 23:31:18 ---
+2022/08/20 23:31:18 - root - INFO -    Check sensors...
+2022/08/20 23:31:18 - root - INFO -    Sensores...
+2022/08/20 23:31:18 - root - INFO - habitacion
+2022/08/20 23:31:18 - root - INFO - Matrimonio
+2022/08/20 23:31:18 - root - INFO - salon
+2022/08/20 23:31:18 - root - INFO - Javier
+2022/08/20 23:31:18 - root - INFO -    Check token...
+2022/08/20 23:31:18 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:19 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:31:19 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:31:19 - root - INFO - Sensor: habitacion tipo: humidity valor: 30.7 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:31:19 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:19 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 182
+2022/08/20 23:31:19 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:31:19 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39.1 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:31:19 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:19 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 170
+2022/08/20 23:31:19 - root - INFO - Sensor: salon tipo: humidity valor: 36 -> topic publicado: casa/salon/humidity
+2022/08/20 23:31:19 - root - INFO - Sensor: salon tipo: temperature valor: 25.8 -> topic publicado: casa/salon/temperature
+2022/08/20 23:31:20 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:20 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:31:20 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:31:20 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:31:51 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:31:51 - root - INFO - ### Start
+2022/08/20 23:31:51 - root - DEBUG - ### Abriendo basedatos -> /usr/local/MisScripts/temsys/kk/db/sensoresTHV.db
+2022/08/20 23:31:51 - root - INFO - --- 20/08/2022 23:31:51 ---
+2022/08/20 23:31:51 - root - INFO -    Check sensors...
+2022/08/20 23:31:51 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:51 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensors HTTP/1.1" 200 620
+2022/08/20 23:31:51 - root - INFO -    Sensores...
+2022/08/20 23:31:51 - root - INFO - habitacion
+2022/08/20 23:31:51 - root - INFO - Matrimonio
+2022/08/20 23:31:51 - root - INFO - salon
+2022/08/20 23:31:51 - root - INFO - Javier
+2022/08/20 23:31:51 - root - INFO -    Check token...
+2022/08/20 23:31:51 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:51 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "POST /api/user/login HTTP/1.1" 200 300
+2022/08/20 23:31:51 - root - INFO - New token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjEwNDkxMTEsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.D8B9KpICL-kt40v_avgTa60VwIaUpPKQPA-ssHPIhIw
+Expiracion: 2022-08-21T02:31:51.665483767Z
+Coookies: {}
+2022/08/20 23:31:51 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:51 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/habitacion/now HTTP/1.1" 200 182
+2022/08/20 23:31:51 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:31:51 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.1 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:31:52 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:52 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Matrimonio/now HTTP/1.1" 200 180
+2022/08/20 23:31:52 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:31:52 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 39 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:31:52 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:52 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/salon/now HTTP/1.1" 200 172
+2022/08/20 23:31:53 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:31:53 - root - INFO - Sensor: salon tipo: humidity valor: 35.9 -> topic publicado: casa/salon/humidity
+2022/08/20 23:31:53 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): 192.168.1.69:5000
+2022/08/20 23:31:53 - urllib3.connectionpool - DEBUG - https://192.168.1.69:5000 "GET /api/sensor/Javier/now HTTP/1.1" 200 172
+2022/08/20 23:31:53 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:31:53 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:33:40 - root - INFO - Connected to server mqtt localhost
+2022/08/20 23:33:40 - root - INFO - ### Start
+2022/08/20 23:33:40 - root - INFO - --- 20/08/2022 23:33:40 ---
+2022/08/20 23:33:40 - root - INFO -    Check sensors...
+2022/08/20 23:33:40 - root - INFO -    Sensores...
+2022/08/20 23:33:40 - root - INFO - habitacion
+2022/08/20 23:33:40 - root - INFO - Matrimonio
+2022/08/20 23:33:40 - root - INFO - salon
+2022/08/20 23:33:40 - root - INFO - Javier
+2022/08/20 23:33:40 - root - INFO -    Check token...
+2022/08/20 23:33:40 - root - INFO - New token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjEwNDkyMjAsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.O56qw-KMoHJ-y27q3gaQAAnVALWccVZZAn2SDyizCHs
+Expiracion: 2022-08-21T02:33:40.434659373Z
+Coookies: {}
+2022/08/20 23:33:40 - root - INFO - Sensor: habitacion tipo: humidity valor: 32.9 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:33:40 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:33:40 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:33:40 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 38.8 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:33:40 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:33:40 - root - INFO - Sensor: salon tipo: humidity valor: 33.2 -> topic publicado: casa/salon/humidity
+2022/08/20 23:33:40 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:33:40 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:34:40 - root - INFO - --- 20/08/2022 23:34:40 ---
+2022/08/20 23:34:40 - root - INFO -    Check sensors...
+2022/08/20 23:34:40 - root - INFO -    Sensores...
+2022/08/20 23:34:40 - root - INFO - habitacion
+2022/08/20 23:34:40 - root - INFO - Matrimonio
+2022/08/20 23:34:40 - root - INFO - salon
+2022/08/20 23:34:40 - root - INFO - Javier
+2022/08/20 23:34:40 - root - INFO -    Check token...
+2022/08/20 23:34:40 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.6 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:34:40 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:34:41 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:34:41 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 38.8 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:34:41 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:34:41 - root - INFO - Sensor: salon tipo: humidity valor: 33.5 -> topic publicado: casa/salon/humidity
+2022/08/20 23:34:41 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:34:41 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:35:41 - root - INFO - --- 20/08/2022 23:35:41 ---
+2022/08/20 23:35:41 - root - INFO -    Check sensors...
+2022/08/20 23:35:41 - root - INFO -    Sensores...
+2022/08/20 23:35:41 - root - INFO - habitacion
+2022/08/20 23:35:41 - root - INFO - Matrimonio
+2022/08/20 23:35:41 - root - INFO - salon
+2022/08/20 23:35:41 - root - INFO - Javier
+2022/08/20 23:35:41 - root - INFO -    Check token...
+2022/08/20 23:35:41 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:35:41 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.8 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:35:41 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:35:41 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 38.6 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:35:41 - root - INFO - Sensor: salon tipo: temperature valor: 25.8 -> topic publicado: casa/salon/temperature
+2022/08/20 23:35:41 - root - INFO - Sensor: salon tipo: humidity valor: 34 -> topic publicado: casa/salon/humidity
+2022/08/20 23:35:41 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:35:41 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:36:41 - root - INFO - --- 20/08/2022 23:36:41 ---
+2022/08/20 23:36:41 - root - INFO -    Check sensors...
+2022/08/20 23:36:41 - root - INFO -    Sensores...
+2022/08/20 23:36:41 - root - INFO - habitacion
+2022/08/20 23:36:41 - root - INFO - Matrimonio
+2022/08/20 23:36:41 - root - INFO - salon
+2022/08/20 23:36:41 - root - INFO - Javier
+2022/08/20 23:36:41 - root - INFO -    Check token...
+2022/08/20 23:36:41 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.7 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:36:41 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:36:41 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:36:41 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 38.7 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:36:42 - root - INFO - Sensor: salon tipo: temperature valor: 25.8 -> topic publicado: casa/salon/temperature
+2022/08/20 23:36:42 - root - INFO - Sensor: salon tipo: humidity valor: 33.2 -> topic publicado: casa/salon/humidity
+2022/08/20 23:36:43 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:36:43 - root - INFO - Sensor: Javier tipo: humidity valor: 35 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:37:43 - root - INFO - --- 20/08/2022 23:37:43 ---
+2022/08/20 23:37:43 - root - INFO -    Check sensors...
+2022/08/20 23:37:43 - root - INFO -    Sensores...
+2022/08/20 23:37:43 - root - INFO - habitacion
+2022/08/20 23:37:43 - root - INFO - Matrimonio
+2022/08/20 23:37:43 - root - INFO - salon
+2022/08/20 23:37:43 - root - INFO - Javier
+2022/08/20 23:37:43 - root - INFO -    Check token...
+2022/08/20 23:37:43 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:37:43 - root - INFO - Sensor: habitacion tipo: humidity valor: 31.5 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:37:43 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:37:43 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 38.8 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:37:43 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:37:43 - root - INFO - Sensor: salon tipo: humidity valor: 32.9 -> topic publicado: casa/salon/humidity
+2022/08/20 23:37:43 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:37:43 - root - INFO - Sensor: Javier tipo: humidity valor: 36 -> topic publicado: casa/Javier/humidity
+2022/08/20 23:38:43 - root - INFO - --- 20/08/2022 23:38:43 ---
+2022/08/20 23:38:43 - root - INFO -    Check sensors...
+2022/08/20 23:38:43 - root - INFO -    Sensores...
+2022/08/20 23:38:43 - root - INFO - habitacion
+2022/08/20 23:38:43 - root - INFO - Matrimonio
+2022/08/20 23:38:43 - root - INFO - salon
+2022/08/20 23:38:43 - root - INFO - Javier
+2022/08/20 23:38:43 - root - INFO -    Check token...
+2022/08/20 23:38:43 - root - INFO - Sensor: habitacion tipo: temperature valor: 28.1 -> topic publicado: casa/habitacion/temperature
+2022/08/20 23:38:43 - root - INFO - Sensor: habitacion tipo: humidity valor: 32 -> topic publicado: casa/habitacion/humidity
+2022/08/20 23:38:43 - root - INFO - Sensor: Matrimonio tipo: temperature valor: 27.3 -> topic publicado: casa/Matrimonio/temperature
+2022/08/20 23:38:43 - root - INFO - Sensor: Matrimonio tipo: humidity valor: 38.7 -> topic publicado: casa/Matrimonio/humidity
+2022/08/20 23:38:43 - root - INFO - Sensor: salon tipo: temperature valor: 25.9 -> topic publicado: casa/salon/temperature
+2022/08/20 23:38:43 - root - INFO - Sensor: salon tipo: humidity valor: 34.6 -> topic publicado: casa/salon/humidity
+2022/08/20 23:38:44 - root - INFO - Sensor: Javier tipo: temperature valor: 27.1 -> topic publicado: casa/Javier/temperature
+2022/08/20 23:38:44 - root - INFO - Sensor: Javier tipo: humidity valor: 36 -> topic publicado: casa/Javier/humidity

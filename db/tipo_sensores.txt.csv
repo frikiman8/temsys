@@ -1,0 +1,4 @@
+"id_tipo","nombre","descripcion"
+0,DHT11,sensor temperatura humedad 
+1,DHT22,sensor temperatura humedad
+2,CCS811,sensor calidad de aire VOD

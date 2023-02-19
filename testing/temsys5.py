@@ -1,0 +1,266 @@
+#!/usr/bin/env python
+#
+#
+# Pasos a seguir para validar usuario
+#===================================
+#
+#1.- Obtenemos los sensores actuales
+#
+#2.- Comprobamos token y si caducado obtenemos otro. Realizar una llamada POST para validar usuario y obtener un token
+#
+#3.- Consultamos sensor por sensor
+#
+#4.- Mandamos por MQTT los datos de los sensores.
+#
+#curl --insecure -X POST https://192.168.1.69:5000/api/user/login -H "Content-Type: application/json" -d '{"name":"antonio","password":"adr"}'
+#{"name":"antonio","role":"user","token":{"value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NTk5OTE4NDMsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.HmFFP_2Kh98Q7aUURc5WbpB5Q_9Xy9rNVH9VZSMDHsg","expires":"2022-08-08T20:50:43.60163054Z","owner":"antonio","role":"user"}}
+#
+#curl --insecure https://192.168.1.69:5000/api/sensor/habitacion/now -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NTk5OTE4NDMsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.HmFFP_2Kh98Q7aUURc5WbpB5Q_9Xy9rNVH9VZSMDHsg"
+#[{"type":"temperature","sensor":"habitacion","date":"2022-08-08T15:55:19.858Z","value":30.9},{"type":"humidity","sensor":"habitacion","date":"2022-08-08T15:55:19.858Z","value":31}]
+#
+#
+import requests
+import json
+import datetime
+import time
+import paho.mqtt.client as mqtt_client
+import random
+import logging
+from dblite import *
+from datetime import datetime
+
+
+
+class Temsys():
+    # Inicializa objeto. TODO: pasar por parametros algunas constantes y definirlos por defecto
+    def __init__ (self):
+        self.host = '192.168.1.69:5000'
+        self.url = 'https://' + self.host + '/api/'
+        self.api_login = 'antonio'
+        self.api_password ='adr'
+        self.sensors = []
+        self.token = None
+        self.expires = ""
+        self.cookies = []
+        self.headers = {'Content-Type': 'application/json;charset=UTF-8', 'Access-Control-Allow-Origin': '*'}
+        self.headers_auth = {}
+        self.logfile = 'temsys_test.log'
+        #self.workdir = "/usr/local/MisScripts/temsys/"
+        self.workdir = "/usr/local/MisScripts/temsys/kk/"
+        self.bdatos="db/sensoresTHV.db"
+        self.mqttc = mqtt_client.Client("casa")
+        self.mqttc.topic = "casa/"
+        self.mqttc.username_pw_set("mqtt","mqttadr13164")
+        self.mqttserver_name = "localhost"
+        self.mqttserver = 1
+
+    # Obtiene el contenido de los request al API
+    def get_content(self, url, headers):
+        content = None
+
+        try:
+            # Get content
+            r = requests.get(url, headers=headers, verify=False, timeout=5.0)
+            # Decode JSON response into a Python dict:
+            if r.ok:
+                content = r.json()
+                return content
+        except requests.exceptions.Timeout as e:
+            #print("Response timeout:", e)
+            logging.error("Response timeout:")
+        except requests.exceptions.HTTPError as e:
+            #print("Bad HTTP status code:", e)
+            logging.error("Bad HTTP status code:")
+        except requests.exceptions.RequestException as e:
+            #print("Network error:", e)
+            logging.error("Network error:")
+
+
+    # Consultamos los sensores existentes. No necesario token. Devuelve lista de sensores
+    def get_sensors(self):
+        self.sernsors = []
+        url = self.url + 'sensors'
+        data = self.get_content(url, self.headers)
+
+        if data:
+            for d in data:
+                for k, v in d.items():
+                    if k == 'name':
+                        self.sensors.append(v)
+
+
+    # consulta datos de un sensor. Necesita token. Devuelve datos como diccionario
+    def get_sensor(self, sensor):
+        url = self.url + 'sensor/' + sensor + '/now'
+        data = self.get_content(url, self.headers)
+        return data
+
+     # Comprueba expiración de tokens. Si lo ha pedido devuelve 1, si no es necesario devuelve 0
+    def check_token(self):
+        if self.token == None:
+            self.token, self.expires, self.cookies = self.authtoken()
+            return 1
+        # comprobamos validez del token. si es actual devuelve 0 sino lo pide y devuelve 1
+        else:
+            now = datetime.now()
+            self.expires = self.expires.replace("T"," ").replace("Z", " ").split(".")[0]
+            expires_datetime = datetime.strptime(self.expires, '%Y-%m-%d %H:%M:%S')
+            # if token expirado. pide un token
+            if now > expires_datetime:
+                #print("Token expirado...")
+                logging.info("Token expirado...")
+                self.token, self.expires, self.cookies = self.authtoken()
+                return 1
+            return 0
+
+    # if sensores vacío o necesitamos forzar el obtener los sensores
+    def check_sensors(self, force=0):
+        if self.sensors == None or self.sensors == [] or force == 1:
+            self.get_sensors()
+            return 1
+        # Si tenemos ya sensores
+        else:
+            return 0
+
+
+    # Decodicifica el token devuelto en el login. Retorna token y expiración
+    def authtoken(self):
+        authtoken, cookies = self.login()
+        #(b'{"name":"antonio","role":"user","token":{"value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGciOiJIUzI1NiIsImV4cGlyZXMiOjE2NjAwODIyNTgsIm93bmVyIjoiYW50b25pbyIsInJvbGUiOiJ1c2VyIn0.DMEDIVYG89D_rqvwI4x2_kNXYmmy6c9BTrhJ_mz0Z08","expires":"2022-08-09T21:57:38.932080509Z","owner":"antonio","role":"user"}}', {})
+        # devuelve un binario que es necesario decodificar
+        raw_data = authtoken.decode('utf-8').replace("'", '"')
+        # los datos en bruto los pasamos a json y lo transformamos en diccionario
+        data = json.loads(raw_data)
+
+        return data["token"]["value"], data["token"]["expires"], cookies
+
+
+    # realiza un login para obtener el token. Retorna token codificado y cookies
+    def login(self):
+        url = self.url + 'user/login'
+        data_get = {'name':     self.api_login,
+                    'password': self.api_password
+                    }
+        r = requests.post(url, json=data_get, verify=False)
+        if r.ok:
+            authToken = r.content
+            cookies = dict(r.cookies)
+            return authToken, cookies
+        else:
+            #print("HTTP %i - %s, Message %s" % (r.status_code, r.reason, r.text))
+            logging.info("HTTP %i - %s, Message %s" % (r.status_code, r.reason, r.text))
+            return "", []
+
+    # Abre la base de datos  
+    def open_database(self, dir, filename):
+        if dir == "" : 
+            dir = os.path.abspath(os.path.dirname(sys.argv[0]))
+        if filename == "": 
+            basedatos = dir + '/db/sensoresTHV.db' 
+        else:
+            basedatos = dir + filename
+        logging.debug("### Abriendo basedatos -> %s" % basedatos)
+        return(SqliteDatabase(basedatos))
+
+    # Realiza conexión servidor mqtt
+    def connect_mqttserver(self, server="localhost", port=1883, keepalive=60, bind_address=""):
+        try:
+            self.mqttc.connect(server, port, keepalive, bind_address)
+            return 0
+        except: 
+            #print("Error al conectar con servidor mqtt " + server)
+            return 1
+
+    # Publica para sensor
+    def public_mqtt_sensor(self, data):
+        self.mqttc.loop_start()
+        topic = self.mqttc.topic + data[0]['sensor'] + "/" + data[0]['type']
+        self.mqttc.publish(topic, data[0]['value'])
+        logging.info("Sensor: %s tipo: %s valor: %s -> topic publicado: %s" % (data[0]['sensor'], data[0]['type'].strip('\n'), data[0]['value'], topic))
+        topic = self.mqttc.topic + data[1]['sensor'] + "/" + data[1]['type']
+        self.mqttc.publish(topic, data[1]['value'])
+        logging.info("Sensor: %s tipo: %s valor: %s -> topic publicado: %s" % (data[1]['sensor'], data[1]['type'].strip('\n'), data[1]['value'], topic))
+        self.mqttc.loop_stop()
+
+
+def main():
+    # Instanciamos Temsys
+    temsys = Temsys()
+
+    # Establecemos logging
+    logging.basicConfig(filename=temsys.logfile, level=logging.INFO,
+            format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', datefmt='%Y/%m/%d %H:%M:%S')
+
+    # Comprueba que tenemos conexión con el servidor mqtt
+    while True:
+        temsys.mqttserver = temsys.connect_mqttserver()
+        if (temsys.mqttserver == 1):
+            logging.info("Error connecting server mqtt %s" % temsys.mqttserver_name)
+            logging.info("Try connect with server mqtt %s..." % temsys.mqttserver_name)
+            time.sleep(10)
+        else:
+            logging.info("Connected to server mqtt %s" % temsys.mqttserver_name)
+            break
+
+    logging.info('### Start')
+    # Abre la base de datos
+    db = temsys.open_database(temsys.workdir, temsys.bdatos)
+    
+    while True:
+        # Hora actual numerico y texto
+        now = datetime.now()
+        tnow = now.strftime('%d/%m/%Y %H:%M:%S')
+        logging.info("--- %s ---" % tnow)
+        # Paso 1. Comprobar sensores, los obtiene si no los tiene y si falla continua el bucle
+        logging.info("   Check sensors...")
+        temsys.check_sensors()
+        if temsys.sensors == []:
+            continue
+
+        # Imprimimos los sensores existentes
+        logging.info("   Sensores...")
+        for sensor in temsys.sensors:
+            logging.info(sensor)
+
+        # Paso 2. Obtenemos token si es necesario. Si ha caducado solicitamos uno.
+        logging.info("   Check token...")
+        if temsys.check_token() == 1:
+            logging.info("New token: %s\nExpiracion: %s\nCoookies: %s" % (temsys.token, temsys.expires, temsys.cookies))
+
+        # paso 3. Obtenemos los datos de los sensores
+        #         Añadimos a cabecera estandar la autorización -> 'Authorization': 'Bearer {}'.format(token)}
+        temsys.headers_auth = temsys.headers
+        temsys.headers_auth['Authorization'] = 'Bearer {}'.format(temsys.token)
+
+        # Para cada sensor
+        for s in temsys.sensors:
+            record = {'id_sensor': -1, 'temperature': 0.0, 'humidity': 0.0, 'VOD': ""}
+            data = temsys.get_sensor(s)
+            # Si no obtenemos datos salimos del bucle infinito y volvemos a conseguir los datos
+            if data == "" or data == None:
+                logging.Error("No tenemos datos de los sensores")
+                break
+            else:
+                for n in range(len(data)):
+                    id_sensor = db.select("select id_sensor from sensores where nombre = \'%s\';" % data[n]['sensor'])
+                    if not id_sensor:
+                        db.execute("insert into sensores (id_tipo, nombre, descripcion) values (%d, \'%s\', \'%s\');" \
+                            % (0, data[n]['sensor'], data[n]['sensor']))
+                        id_sensor = db.select("select id_sensor from sensores where nombre = \'%s\';" % data[n]['sensor'])
+                        if not id_sensor:
+                            logging.error("No se insertan registros en la BD por no tener sensores definidos.....")
+                            continue
+                    record['id_sensor'] = id_sensor[0][0]
+                    if data[n]['value']:
+                        record[data[n]['type']] = data[n]['value']
+
+                #Insertamos registro en la base de datos
+                db.execute("insert into datos (id_sensor, temperatura, humedad, VOD, fecha) values (%d, %0.2f, %0.2f, \'%s\', \'%s\');" \
+                            % (record['id_sensor'], record['temperature'], record['humidity'], record['VOD'], tnow))
+                temsys.public_mqtt_sensor(data)
+
+        time.sleep(60)
+
+
+if __name__ == '__main__':
+    main()
